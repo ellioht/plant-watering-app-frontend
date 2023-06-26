@@ -4,10 +4,10 @@ import Card from "react-bootstrap/Card";
 import WaterProgressBar from "./WaterProgressBar";
 import { Container } from "react-bootstrap";
 
-function PlantCard() {
+function PlantCard(props) {
   return (
     <Card className="card">
-      <div className="close"></div>
+      <button className="close" onClick={props.close}></button>
       <Card.Body className="cardCnter">
         <div className="cardBody">
           <div>
