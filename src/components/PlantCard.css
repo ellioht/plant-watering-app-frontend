@@ -83,6 +83,7 @@ hr {
   background-position: center;
   border-radius: 50%;
   right: 0;
+  border: none;
 }
 .close:hover {
   cursor: pointer;

@@ -1,35 +1,39 @@
 .Info {
-    padding: 20%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    gap: 10px;
-}
-.password {
-    
-}
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-  }
-  
-  /* Container styles */
-  .container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 40px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-.signUp {
-    background-color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
 
 }
-
-  
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 100vh;
+  padding: 20px;
+  background-image: url('https://images.unsplash.com/photo-1463936575829-25148e1db1b8');
+  background-size: cover;
+  background-position: center;
+}
+.loginBox {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 5px;
+  width: 400px;
+  height: 300px;
+  background-color: var(--mintgreen);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.loginBox h1 {
+  text-align: center;
+  color: var(--paynesgray);
+  font-weight: 600;
+}
+.signupText {
+  text-align: center;
+  color: var(--paynesgray)
+}

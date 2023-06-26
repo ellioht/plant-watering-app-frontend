@@ -4,6 +4,9 @@ import axios from "axios";
 import "./Login.css";
 
 function Login() {
+  const server = "https://plant-watering-app-server.onrender.com/";
+  const local = "http://localhost:8000/";
+
   const history = useNavigate();
 
   const [email, setEmail] = useState("");
@@ -13,7 +16,7 @@ function Login() {
     e.preventDefault();
     try {
       await axios
-        .post("https://plant-watering-app-server.onrender.com/", { email, password })
+        .post(local, { email, password })
         .then((res) => {
           if (res.data === "exist") {
             history("/home", { state: { id: email } });
@@ -31,32 +34,33 @@ function Login() {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
+    <div className="loginContainer">
+      <div className="loginBox">
+        <h1>Login</h1>
+        <form className="Info" action="POST">
+          <input
+            type="email"
+            placeholder="Email"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+            name=""
+            id=""
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+            name=""
+            id=""
+          />
+          <input type="submit" value="Login" onClick={submit} />
+        </form>
 
-      <form className="Info" action="POST">
-        <input
-          type="email"
-          placeholder="Email"
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-          name=""
-          id=""
-        />
-        <input className = "password"
-          type="password"
-          placeholder="Password"
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-          name=""
-          id=""
-        />
-        <input type="submit" onClick={submit} />
-      </form>
-
-      <Link to="/signup" className ="signUp">Signup</Link>
+        <Link to="/signup" className="signupText">or signup</Link>
+      </div>
     </div>
   );
 }
