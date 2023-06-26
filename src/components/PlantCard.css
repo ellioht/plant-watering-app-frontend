@@ -1,0 +1,36 @@
+.card {
+  background-color: var(--teagreen);
+  width: 32rem;
+  height: 14rem;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.plantImage {
+  object-fit: cover;
+}
+.cardBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.wateringIcon {
+  width: 6rem;
+  height: 6rem;
+  background-color: var(--paynesgray);
+}
+.plantImg {
+  width: 8rem;
+  height: 12rem;
+  background-color: var(--paynesgray);
+}
+.plantTextContainer {
+  height: 12rem;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  color: var(--paynesgray);
+}
+.title {
+  font-weight: 600;
+}

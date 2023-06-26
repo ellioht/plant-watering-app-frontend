@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
+import "./Login.css";
 
 function Login() {
   const history = useNavigate();
@@ -33,7 +34,7 @@ function Login() {
     <div>
       <h1>Login</h1>
 
-      <form action="POST">
+      <form className="Info" action="POST">
         <input
           type="email"
           placeholder="Email"
@@ -43,7 +44,7 @@ function Login() {
           name=""
           id=""
         />
-        <input
+        <input className = "password"
           type="password"
           placeholder="Password"
           onChange={(e) => {
@@ -55,11 +56,7 @@ function Login() {
         <input type="submit" onClick={submit} />
       </form>
 
-      <br />
-      <p>OR</p>
-      <br />
-
-      <Link to="/signup">Signup</Link>
+      <Link to="/signup" className ="signUp">Signup</Link>
     </div>
   );
 }
