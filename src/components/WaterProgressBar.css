@@ -1,0 +1,8 @@
+.pbar {
+  /* box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px !important; */
+  height: 1rem;
+  background-color: var(--white);
+}
+.bg-custom-color {
+  background-color: var(--blue);
+}

@@ -1,36 +1,89 @@
 .card {
-  background-color: var(--teagreen);
-  width: 32rem;
-  height: 14rem;
-  border: none;
+  background-color: var(--mintgreen);
+  width: 28rem;
+  height: 12rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border: none;
 }
 .plantImage {
   object-fit: cover;
+}
+.cardCnter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 .cardBody {
   display: flex;
   justify-content: center;
   align-items: center;
+  align-items: flex-start;
   gap: 1rem;
+  height: 100%;
 }
 .wateringIcon {
-  width: 6rem;
-  height: 6rem;
+  width: 4rem;
+  height: 4rem;
   background-color: var(--paynesgray);
 }
 .plantImg {
-  width: 8rem;
-  height: 12rem;
-  background-color: var(--paynesgray);
+  width: 10rem;
+  height: 10rem;
+  /* background-image: url('/src/imgs/placeholder.png'); */
+  background-image: url('https://images.unsplash.com/photo-1583198161059-9e461b466974');
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.5rem;
 }
 .plantTextContainer {
-  height: 12rem;
+  height: 100%;
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: column;
   color: var(--paynesgray);
 }
 .title {
   font-weight: 600;
+  font-size: xx-large;
+  padding: 0;
+  margin: 0;
+}
+.textBold {
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+}
+.textLarge {
+  font-size: x-large;
+  padding: 0;
+  margin: 0;
+}
+.textSmall {
+  font-size: larger;
+  padding: 0;
+  margin: 0;
+}
+.textInline {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+hr {
+  margin: 0;
+}
+.close {
+  height: 2rem;
+  width: 2rem;
+  position: absolute;
+  background-image: url('/src/icons/close.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  right: 0;
+}
+.close:hover {
+  cursor: pointer;
 }

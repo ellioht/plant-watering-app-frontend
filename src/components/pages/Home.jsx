@@ -7,6 +7,8 @@ function Home() {
   const location = useLocation();
   const [plants, setPlants] = useState([]);
 
+  
+
   return (
     <div className="home">
       <h1>Hello {location.state.id} and welcome to plant watering app</h1>
