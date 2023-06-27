@@ -4,7 +4,7 @@ import axios from "axios";
 import "./Signup.css";
 
 function Signup() {
-  const server = "https://plant-watering-app-server.onrender.com/";
+  const server = "https://plant-watering-app-server.onrender.com/signup";
   const local = "http://localhost:8000/signup";
 
   const history = useNavigate();
@@ -16,7 +16,7 @@ function Signup() {
     e.preventDefault();
     try {
       await axios
-        .post(local, { email, password })
+        .post(server, { email, password })
         .then((res) => {
           if (res.data === "exist") {
             alert("User already exists");

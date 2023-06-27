@@ -16,7 +16,7 @@ function Login() {
     e.preventDefault();
     try {
       await axios
-        .post(local, { email, password })
+        .post(server, { email, password })
         .then((res) => {
           if (res.data === "exist") {
             history("/home", { state: { id: email } });

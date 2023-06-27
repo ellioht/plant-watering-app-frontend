@@ -6,11 +6,13 @@ import "./Home.css";
 import axios from "axios";
 
 function Home() {
+
+
   const location = useLocation();
   const [plants, setPlants] = useState([]);
 
   const GetPlants = async () => {
-    const res = await fetch("http://localhost:8000/getplants");
+    const res = await fetch("https://plant-watering-app-server.onrender.com/getplants");
     const data = await res.json();
     setPlants(data);
   }
@@ -21,7 +23,7 @@ function Home() {
 
   const deletePlant = async (id) => {
     try {
-      const res = await axios.delete(`http://localhost:8000/deleteplant/${id}`);
+      const res = await axios.delete(`https://plant-watering-app-server.onrender.com/deleteplant/${id}`);
       console.log(res.data);
     } catch (error) {
       console.log(error);
