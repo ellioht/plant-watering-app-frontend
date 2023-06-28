@@ -1,89 +1,83 @@
 .card {
-  background-color: var(--mintgreen);
-  width: 28rem;
-  height: 12rem;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  width: 20rem;
+  height: 25rem;
+  background-color: #fff;
+  border-radius: .5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border: none;
 }
-.plantImage {
-  object-fit: cover;
-}
+
 .cardCnter {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
 }
+
 .cardBody {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-items: flex-start;
-  gap: 1rem;
-  height: 100%;
+  position: relative;
+  height: 80%;
+  overflow: hidden;
 }
-.wateringIcon {
-  width: 4rem;
-  height: 4rem;
-  background-color: var(--paynesgray);
-}
-.plantImg {
-  width: 10rem;
-  height: 10rem;
-  /* background-image: url('/src/imgs/placeholder.png'); */
-  background-image: url('https://images.unsplash.com/photo-1583198161059-9e461b466974');
-  background-size: cover;
-  background-position: center;
-  border-radius: 0.5rem;
-}
-.plantTextContainer {
-  height: 100%;
+
+.plantImgSrc {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  color: var(--paynesgray);
+  height: 100%;
+  object-fit: cover;
+  border-radius: .5rem .5rem 0 0;
 }
-.title {
-  font-weight: 600;
-  font-size: xx-large;
-  padding: 0;
-  margin: 0;
+
+.wateringIcon {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  background-image: url('/src/icons/watering-white.png');
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.textBold {
-  font-weight: 600;
-  padding: 0;
-  margin: 0;
+
+.plantTextContainer {
+  padding: 1rem;
 }
-.textLarge {
-  font-size: x-large;
-  padding: 0;
-  margin: 0;
+
+.plantTextContainer h1 {
+  margin: 1rem 0 !important;
 }
-.textSmall {
-  font-size: larger;
-  padding: 0;
-  margin: 0;
+
+.plantName h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--paynesgray)
 }
-.textInline {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  gap: 1rem;
+
+.waterAfter {
+  font-size: 1rem;
+  color: var(--cadetgray);
 }
-hr {
-  margin: 0;
-}
+
 .close {
-  height: 2rem;
-  width: 2rem;
+  z-index: 10;
+  height: 1.4rem;
+  width: 1.4rem;
   position: absolute;
   background-image: url('/src/icons/close.png');
-  background-size: cover;
+  background-size: 130%;
   background-position: center;
-  border-radius: 50%;
-  right: 0;
   border: none;
+  right: 0.3rem;
+  top: 0.3rem;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 0;
+  margin: 0;
 }
 .close:hover {
   cursor: pointer;

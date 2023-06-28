@@ -6,8 +6,6 @@ import "./Home.css";
 import axios from "axios";
 
 function Home() {
-
-
   const location = useLocation();
   const [plants, setPlants] = useState([]);
 
@@ -15,7 +13,7 @@ function Home() {
     const res = await fetch("https://plant-watering-app-server.onrender.com/getplants");
     const data = await res.json();
     setPlants(data);
-  }
+  };
 
   useEffect(() => {
     GetPlants();
@@ -23,7 +21,9 @@ function Home() {
 
   const deletePlant = async (id) => {
     try {
-      const res = await axios.delete(`https://plant-watering-app-server.onrender.com/deleteplant/${id}`);
+      const res = await axios.delete(
+        `https://plant-watering-app-server.onrender.com/deleteplant/${id}`
+      );
       console.log(res.data);
     } catch (error) {
       console.log(error);
@@ -32,19 +32,23 @@ function Home() {
 
   return (
     <div className="home">
-      <h1>Hello {location.state.id} and welcome to plant watering app</h1>
+      <h1>Welcome back{" "}
+        <span style={{fontWeight: "bolder"}}>
+          {location.state.id}  
+        </span>
+        {" "}to your garden</h1>
       <div className="plantCardContainer">
-      {plants.map((plant) => (
-        <PlantCard
-          key={plant._id}
-          name={plant.name}
-          water={plant.water}
-          frequency={plant.frequency}
-          image={plant.image}
-          close={() => deletePlant(plant._id)}
-        />
-      ))}
-      <AddCard />
+        {plants.map((plant) => (
+          <PlantCard
+            key={plant._id}
+            name={plant.name.toUpperCase().slice(0, 1) + plant.name.slice(1)}
+            water={plant.water}
+            frequency={plant.frequency}
+            image={plant.image}
+            close={() => deletePlant(plant._id)}
+          />
+        ))}
+        <AddCard />
       </div>
     </div>
   );

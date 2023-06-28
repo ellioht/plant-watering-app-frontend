@@ -1,39 +1,36 @@
 import "./PlantCard.css";
-import React, { useEffect } from "react";
+import React, { useState} from "react";
 import Card from "react-bootstrap/Card";
 import WaterProgressBar from "./WaterProgressBar";
-import { Container } from "react-bootstrap";
+import placeholder from "../imgs/placeholder.png";
 
 function PlantCard(props) {
+  const [image, setImage] = useState(props.image);
+  const handleImageError = () => {
+    setImage(placeholder);
+  }
   return (
-    <Card className="card">
+    <div className="card">
       <button className="close" onClick={props.close}></button>
-      <Card.Body className="cardCnter">
+      <div className="cardCnter">
         <div className="cardBody">
-          <div>
-            <div className="plantImg"></div>
-          </div>
-
-          <div className="plantTextContainer">
-            <Card.Title className="title">Lavender</Card.Title>
-
-            <hr />
-
-            <div className="textInline">
-              <Card.Text className="textSmall">Frequency</Card.Text>
-              <Card.Text className="textSmall">2/Week</Card.Text>
-            </div>
-            <div className="textInline">
-              <Card.Text className="textLarge">Water in</Card.Text>
-              <Card.Text className="textLarge textBold">3 days</Card.Text>
-            </div>
-            <div className="cardFooter">
-              <WaterProgressBar />
-            </div>
-          </div>
+          <img
+            src={image}
+            alt=""
+            className="plantImgSrc"
+            onError={handleImageError}
+          />
+          <div className="wateringIcon"></div>
         </div>
-      </Card.Body>
-    </Card>
+        <div className="plantTextContainer">
+          <div className="plantName"><h1>{props.name}</h1></div>
+          <div className="waterAfter"><p>Water every {props.frequency} days</p></div>
+          <WaterProgressBar 
+            waterProgBar={props.water}
+          />
+        </div>
+      </div>
+    </div>
   );
 }
 
