@@ -5,6 +5,7 @@ function Modal({ closeModal, addPlant }) {
   const [plantName, setPlantName] = useState("");
   const [plantImage, setPlantImage] = useState("");
   const [plantFrequency, setPlantFrequency] = useState("");
+  const [plantWater, setPlantWater] = useState(new Date().getTime());
 
   const handleAddPlant = (e) => {
     e.preventDefault();
@@ -12,7 +13,7 @@ function Modal({ closeModal, addPlant }) {
       alert("Please fill all the fields");
       return;
     } else {
-      addPlant(plantName, plantImage, plantFrequency);
+      addPlant(plantName, plantImage, plantFrequency, plantWater);
       setPlantName("");
       setPlantImage("");
       setPlantFrequency("");
