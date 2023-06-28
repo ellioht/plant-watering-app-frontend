@@ -1,0 +1,27 @@
+.cardAdd {
+  width: 20rem;
+  height: 25rem;
+  background-color: #fff;
+  border-radius: .5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.addButton {
+  background-color: var(--cadetgray);
+  background-image: url('/src/icons/plus.png');
+  background-size: 130%;
+  background-position: center;
+  border-radius: 50%;
+  color: var(--white);
+  border: none;
+  width: 2rem;
+  height: 2rem;
+}
+.addButton:hover {
+  background-color: var(--paynesgray) !important;
+  color: var(--white);
+}
+  

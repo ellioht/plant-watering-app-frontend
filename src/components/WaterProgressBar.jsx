@@ -1,10 +1,10 @@
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import './WaterProgressBar.css';
 
-function WaterProgressBar() {
+function WaterProgressBar(props) {
   return (
     <div>
-      <ProgressBar className="pbar" now={60} variant="custom-color" />
+      <ProgressBar className="pbar" now={props.waterProgBar} variant="custom-color" />
     </div>
   );
 }
