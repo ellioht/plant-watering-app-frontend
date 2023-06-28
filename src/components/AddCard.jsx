@@ -8,11 +8,11 @@ import "./AddCard.css";
 function AddCard() {
   const [openModal, setOpenModal] = useState(false);
 
-  const addPlant = async (plantName, plantImage, plantFrequency) => {
+  const addPlant = async (plantName, plantImage, plantFrequency, plantWater) => {
     setOpenModal(false);
     const plantData = {
       name: plantName,
-      water: "Moderate",
+      water: plantWater,
       frequency: plantFrequency,
       image: plantImage,
     };

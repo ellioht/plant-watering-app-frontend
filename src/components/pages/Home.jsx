@@ -41,8 +41,9 @@ function Home() {
         {plants.map((plant) => (
           <PlantCard
             key={plant._id}
+            id={plant._id}
             name={plant.name.toUpperCase().slice(0, 1) + plant.name.slice(1)}
-            water={plant.water}
+            waterDate={plant.water}
             frequency={plant.frequency}
             image={plant.image}
             close={() => deletePlant(plant._id)}
