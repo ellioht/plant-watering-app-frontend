@@ -1,6 +1,5 @@
 import "./PlantCard.css";
 import React, { useState, useEffect } from "react";
-import Card from "react-bootstrap/Card";
 import WaterProgressBar from "./WaterProgressBar";
 import placeholder from "../imgs/placeholder.png";
 import axios from "axios";
@@ -30,10 +29,6 @@ function PlantCard(props) {
     }
   };
 
-  useEffect(() => {
-    console.log("water date " + wateringDate);
-  }, [wateringDate]);
-
   return (
     <div className="card">
       <button className="close" onClick={props.close}></button>
@@ -54,6 +49,8 @@ function PlantCard(props) {
           <WaterProgressBar
             frequency={props.frequency}
             water={wateringDate}
+            plant={props.name}
+            pData={props.id}
           />
         </div>
       </div>

@@ -1,52 +1,37 @@
 import React, { useState } from "react";
 import "./navbar.css";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-const Navbar = () => {
-    const [active, setActive] = useState("nav_menu");
-    const [toggleIcon, setToggleIcon] = useState("nav_toggle");
-
-    const navToggle = () => {
-        active === 'nav_menu' ? setActive('nav_menu active') : setActive('nav_menu')
-
-
-        // Toggle Icon
-
-        toggleIcon === 'nav_toggle' ? setToggleIcon('nav_toggle toggle') : setToggleIcon('nav_toggle')
-    }
-
-
-
+const Navbar = (props) => {
+  const navigate = useNavigate();
 
   return (
     <nav className="nav">
-      <a href="/" className="nav_brand">
-        herdoy
-      </a>
-      <ul className={active}></ul>
       <li className="nav_item">
-        <a href="#" className="nav_link">Home</a>
+        <button
+          onClick={() => navigate("/home", { state: { id: props.mail } })}
+          className="nav_link"
+        >
+          My Garden
+        </button>
       </li>
       <li className="nav_item">
-        <a href="#" className="nav_link">About</a>
+        <button
+          onClick={() => navigate("/notifications", { state: { id: props.mail } })}
+          className="nav_link"
+        >
+          Notifications
+        </button>
       </li>
-      <li className="nav_item">
-        <a href="#" className="nav_link">Skills</a>
-      </li>
-      <li className="nav_item">
-        <a href="#" className="nav_link">Portfolio</a>
-      </li>
-      <li className="nav_item">
-        <a href="#" className="nav_link">Contacts</a>
-      </li>
-      <ul>
-        <div onClick = {navToggle} className={toggleIcon}>
-          <div className="line1"></div>
-          <div className="line2"></div>
-          <div className="line3"></div>
-        </div>
-      </ul>
+      <div className="logoutBox">
+        <Link to="/" className="nav_brand">
+          Logout
+        </Link>
+      </div>
     </nav>
   );
-}
+};
 
 export default Navbar;
