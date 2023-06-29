@@ -5,6 +5,11 @@
   gap: 10px;
 
 }
+.loginBG {
+  background-image: url('https://images.unsplash.com/photo-1463936575829-25148e1db1b8');
+  background-size: cover;
+  background-position: center;
+}
 .loginContainer {
   display: flex;
   justify-content: center;
@@ -12,9 +17,6 @@
   gap: 10px;
   height: 100vh;
   padding: 20px;
-  background-image: url('https://images.unsplash.com/photo-1463936575829-25148e1db1b8');
-  background-size: cover;
-  background-position: center;
 }
 .loginBox {
   display: flex;
@@ -25,7 +27,7 @@
   border-radius: 5px;
   width: 400px;
   height: 300px;
-  background-color: var(--mintgreen);
+  background-color: var(--pistachio);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 .loginBox h1 {
