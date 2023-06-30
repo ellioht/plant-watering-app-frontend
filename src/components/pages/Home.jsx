@@ -20,7 +20,7 @@ function Home() {
 
   useEffect(() => {
     GetPlants();
-  }, [plants]);
+  }, []);
 
   const deletePlant = async (id) => {
     try {
@@ -56,13 +56,12 @@ function Home() {
               frequency={plant.frequency}
               image={plant.image}
               close={() => deletePlant(plant._id)}
+              
             />
           ))}
           <AddCard />
         </div>
       </div>
-      <UserId 
-      />
     </div>
   );
 }
