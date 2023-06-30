@@ -3,8 +3,30 @@ import React, { useState, useEffect } from "react";
 import WaterProgressBar from "./WaterProgressBar";
 import placeholder from "../imgs/placeholder.png";
 import axios from "axios";
+import toastr from 'toastr';
+import "toastr/build/toastr.min.css";
+
 
 function PlantCard(props) {
+
+  toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": true,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+
   const [wateringDate, setWateringDate] = useState(props.waterDate);
   const [image, setImage] = useState(props.image);
   const handleImageError = () => {
@@ -24,8 +46,24 @@ function PlantCard(props) {
       setWateringDate(newTime);
       console.log("new time " + newTime);
       console.log("Watered!");
+      toastr["success"]("Plant watered", props.name)
+      postNotification({
+        plant: props.id,
+        date: new Date(),
+        message: "Plant Watered!",
+      });
     } catch (error) {
       console.log(error+" failed to water plant");
+    }
+  };
+
+  const postNotification = async (data) => {
+    const notificationData = data;
+    try {
+      const res = await axios.post(`https://plant-watering-app-server.onrender.com/sendnotification`, notificationData);
+      console.log("Notification sent!");
+    } catch (error) {
+      console.log(error+" failed to send notification");
     }
   };
 

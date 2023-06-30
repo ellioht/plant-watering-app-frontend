@@ -23,12 +23,28 @@ function Notifications(props) {
     fetchNotifications();
   }, []);
 
+  const deleteNotification = async (id) => {
+    console.log(id);
+    try {
+      const res = await axios.delete(
+        `https://plant-watering-app-server.onrender.com/deletenotification/${id}`
+      );
+      console.log(res.data);
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const buldTable = () => {
     return notifications?.map((notification, index) => (
       <tr key={index}>
         <td>{notification.plant}</td>
         <td>{notification.date}</td>
         <td>{notification.message}</td>
+        <td>
+          <button onClick={() => deleteNotification(notification._id)}>Delete</button>
+        </td>
       </tr>
     ));
   };
@@ -48,6 +64,7 @@ function Notifications(props) {
             <th>Plant</th>
             <th>Date</th>
             <th>Message</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>{buldTable()}</tbody>

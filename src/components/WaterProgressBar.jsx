@@ -50,11 +50,17 @@ function WaterProgressBar(props) {
       // 100% - (example = (2days/7days) * 100 = 71.4%) = 28.6%.
       let waterProgBar = 100 - (minDiff / waterFreq) * 100;
       if (waterProgBar == 20) {
-        toastr["warning"]("Needs watering", props.plant)
-        postNotification();
+        // toastr["warning"]("Needs watering", props.plant)
+        // postNotification();
       } else if (waterProgBar <= 10) {
         waterProgBar = 10;
         clearInterval(interval);
+        toastr["warning"]("Needs watering", props.plant)
+        postNotification({
+          plant: props.pData,
+          date: new Date(),
+          message: "Water your plant!",
+        });
       } 
       setWaterProgBar(Math.floor(waterProgBar));
       console.log(Math.floor(waterProgBar)+"%");
@@ -63,13 +69,9 @@ function WaterProgressBar(props) {
   }, [props.water, props.frequency]);
 
   // Post notification to user when plant needs watering.
-  const postNotification = async () => {
+  const postNotification = async (data) => {
     console.log(props.pData);
-    const notificationData = {
-      plant: props.pData,
-      date: new Date(),
-      message: "Water your plant!",
-    };
+    const notificationData = data;
     try {
       const res = await axios.post(`https://plant-watering-app-server.onrender.com/sendnotification`, notificationData);
       console.log("Notification sent!");
