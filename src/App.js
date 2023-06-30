@@ -4,12 +4,10 @@ import Login from "./components/pages/Login";
 import Signup from "./components/pages/Signup";
 import Home from "./components/pages/Home";
 import Notifications from "./components/pages/Notifications";
-import DataContext from "./DataContext";
 
 function App() {
   return (
     <div className="App">
-      <DataContext.Provider value={{}}>
         <Router>
           <Routes>
             <Route path="/" element={<Login />} />
@@ -18,7 +16,6 @@ function App() {
             <Route path="/notifications" element={<Notifications />} />
           </Routes>
         </Router>
-      </DataContext.Provider>
     </div>
   );
 }
