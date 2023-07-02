@@ -1,5 +1,5 @@
 ### Plant Watering App
-## Built with React
+Built with React
 ## Features:
 - Login / signup
 - Input plants into the app and display watering information about them.
