@@ -1,6 +1,11 @@
 ### Plant Watering App
-Built with React
+Full-stack application using MERN stack. React, Node, MongoDB, Express.
+View deployment:
+https://ellioht.github.io/plant-watering-app-frontend/
+Link to back-end:
+https://github.com/ellioht/plant-watering-app-backend
 ## Features:
-- Login / signup
-- Input plants into the app and display watering information about them.
-- Receive noptifications when a plant is watered, or needs to be watered.
+- Login / signup.
+- Add plants into the app to display watering information about them.
+- Receive notifications when a plant is watered, or needs to be watered.
+- Receive data from the backend using API calls.
